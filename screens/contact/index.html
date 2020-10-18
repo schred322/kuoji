@@ -1,24 +1,53 @@
 <script>
+    /*  
+    * company:  liquidcreations
+    * date:     2020.10.18 
+    * 
+    */
+
     (function() {
 
         console.log('rsi: contact screen'); 
 
     })(document);
-     
-    function remote_method() {
-       console.log('remote');
-    } 
-</script>
-<h2>RSI [Remote Screen Invocation]</h2>
-<div class="center" style="background-color: #fffccc;"> 
-    <h1>Contact Form</h1> 
-    <p>This is served from a file</p>
-    {body}
-    <hr/>
-    {data_port}
-    <hr/>
-    <div>{component}</div>
-</div>
-<div class="footer">{footer}</div>
 
-<input type="button" id="btn" value="remote" onclick="remote_method()" />
+    function submit_local(form) {
+       console.log('form: ' + form);
+    } 
+
+</script>
+<form method="post" onsubmit="javascript: submit_local(this); return false;">
+<div class="col-02"><h2>Contact</h2>
+
+    <p>Please use either the form below to contact LiquidCreations.</p> 
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tbody><tr>
+                <td class="clsFormLabel"><label>Contact Name:</label></td>
+                <td><input type="text" name="txtContactName" class="required"></td>
+            </tr>
+            <tr>
+                <td class="clsFormLabel"><label>Subject:</label></td>
+                <td><input type="text" name="txtSubject"></td>
+            </tr>
+    <tr>
+                <td class="clsFormLabel"><label>Email:</label></td>
+                <td><input type="text" name="txtEmail" class="required email"></td>
+            </tr>
+            <tr>
+                <td class="clsFormLabel"><label>Message:</label></td>
+                <td> 
+                    <textarea name="txtBody" textmode="MultiLine" rows="10" class="required"></textarea>
+                </td>
+            </tr>
+    </tbody>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="75%">
+            <tbody><tr>
+                <td align="right" colspan="2">
+                    <input type="button" id="btn" value="send" onclick="remote_method()" />
+            </tr>
+        </tbody>
+    </table>
+    <p>You may also contact us at:  info@nuco.com </p> 
+</div>
+</form>

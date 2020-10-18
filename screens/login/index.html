@@ -2,20 +2,35 @@
     
     console.log('rsi: login screen'); 
     
-    function remote() {
-       console.log('remote');
+    function login_local() {
+       console.log('login');
     } 
 </script> 
-<h2>RSI [Remote Screen Invocation]</h2>
-<div class="center" style="background-color: #dcdc35;"> 
-    <h1>Login Form</h1> 
-    <p>rsi ... </p>
-    <
-    <hr/>
-    {data_port}
-    <hr/>
-    <div>{component}</div>
+<form method="post" onsubmit="javascript: login_local(this); return false;" >
+<div class="mc-wrapper-box">
+    
+    <h5>Please provide username and password.</h5>
+    <hr>
+    <table border="0" cellpadding="3px;">
+        <tbody><tr>
+            <td><label>Username:</label></td>
+            <td><input name="username" type="text" id="username" class="inputs"></td>
+        </tr>
+        <tr>
+            <td><label>Password:</label></td>
+            <td><input name="password" type="password" id="password" class="inputs"></td>
+        </tr> 
+        <tr>
+            <td colspan="2" style="text-align:right">
+                <input type="submit" id="btn" value="login" onclick="login_local()" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"> 
+                <a href="/MediaCenter/ForgotPassword.aspx">Forgot Password</a>
+            </td>
+        </tr>
+    </tbody></table>
 </div>
-<div class="footer">{footer}</div>
 
-<input type="button" id="btn" value="remote" onclick="remote()" />
+</form>
