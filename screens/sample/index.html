@@ -1,0 +1,124 @@
+<script type="module">
+
+    console.log('rsi: sample form');
+
+    let mle = document.prototype = function(object){
+            
+            var id = '#';
+            var cls = '.';
+        
+            if (object.substring(0, 1) === cls) { 
+                return document.getElementsByClassName(object.replace(cls, ''));    
+            }
+            if (object.substring(0, 1) === id) {
+                return document.getElementById(object.replace(id, ''));
+            } 
+            return null;
+        }
+ 
+    const services = (function(service_url) {
+
+        let base_api_url = (service_url === undefined) ? 'http://oojs/' : service_url; 
+
+        const api_call = (function (method, url) {
+
+            return new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open(method, base_api_url + url);
+                xhr.onload = function () {
+                if (this.status >= 200 && this.status < 300) {
+                    resolve(xhr.response);
+                } else {
+                    reject({
+                    status: this.status,
+                    statusText: xhr.statusText
+                    });
+                }
+                };
+                xhr.onerror = function () {
+                reject({
+                    status: this.status,
+                    statusText: xhr.statusText
+                });
+                };
+                xhr.send();
+            });
+        });
+    
+        return { 
+            get_clients: function(url) { 
+                return api_call('GET', url);
+            },
+            get_client_by_id: function(url) { 
+                return api_call('GET', url);
+            }
+        }
+    });
+
+    function add(x, y) {
+    return parseInt(x) + parseInt(y);
+}
+
+    function subtract(x, y) {
+        return parseInt(x) - parseInt(y);
+    }
+
+    let base = 'http://oojs/';  
+    let user = 'Donnie Drops';
+    let role = 'Manager';
+
+    /* ui changes */
+    mle('#user').innerHTML = user;
+    mle('.role')[1].innerHTML = role;
+
+    /* event handlers */  
+    btn_add.addEventListener('click', () => {  
+        mle('#result').value = '';
+        mle('#result').value = add(value_1.value, value_2.value); 
+    }); 
+    
+    btn_subtract.addEventListener('click', () => {  
+        mle('#result').value = '';
+        mle('#result').value = subtract(value_1.value, value_2.value); 
+    }); 
+    
+    mle('#btn_load').addEventListener('click', () => {
+        services(base).get_clients('data.html')
+            .then(function(result) {  
+                mle('#client_data').innerHTML = ''; 
+                mle('#client_data').innerHTML =   result;
+            }); 
+    });
+    
+    btn_clear.addEventListener('click', () => {
+        mle('#client_data').innerHTML = '';
+    });
+
+    btn_clear_calc.addEventListener('click', () => {
+        mle('#result').value = '';
+    });
+    
+</script>
+<div style="background-color: #f25;">
+<h2>RSI [Remote Screen Invocation]</h2>
+<hr/> 
+<h3>User: <span id="user"></span></h3>
+<div>
+    Role:  
+    <div>A: <span class="role"></span></div>
+    <div>B: <span class="role"></span></div>
+</div>
+
+<hr/> 
+<input type="text" id="value_1" placeholder="value" size="10"/>
+<input type="text" id="value_2" placeholder="value"  size="10"/>
+<input type="text" id="result" placeholder="result"  size="10"/>
+<input type="button" id="btn_add" value="add"/>
+<input type="button" id="btn_subtract" value="subtract"/>
+<input type="button" id="btn_clear_calc" value="clear"/>
+
+<hr/>
+<input type="button" id="btn_load" value="load clients"/>
+<input type="button" id="btn_clear" value="clear"/>
+<div id="client_data"></div>
+</div>

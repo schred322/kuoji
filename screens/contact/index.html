@@ -1,0 +1,24 @@
+<script>
+    (function() {
+
+        console.log('rsi: contact screen'); 
+
+    })(document);
+     
+    function remote_method() {
+       console.log('remote');
+    } 
+</script>
+<h2>RSI [Remote Screen Invocation]</h2>
+<div class="center" style="background-color: #fffccc;"> 
+    <h1>Contact Form</h1> 
+    <p>This is served from a file</p>
+    {body}
+    <hr/>
+    {data_port}
+    <hr/>
+    <div>{component}</div>
+</div>
+<div class="footer">{footer}</div>
+
+<input type="button" id="btn" value="remote" onclick="remote_method()" />

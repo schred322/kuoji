@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title> 
+    <style>
+        .container {
+            width: 600px;
+            height: 600px;
+            padding: 10px;
+            border: 10px solid #dcdcdc;
+        }
+    </style> 
+    <script src="http://localhost:1488/kuoji_1.0.js"></script>
+</head>
+<body>
+    <input type="button" id="btn" value="Login" onclick="kuoji.screen('login', 'container')" />
+    <input type="button" id="btn" value="Contact" onclick="kuoji.screen('contact', 'container')" />
+    <input type="button" id="btn" value="sample" onclick="kuoji.screen('sample', 'container')" />
+    <hr />
+    <div id="container" class="container"></div>
+     
+</body>
+</html>
