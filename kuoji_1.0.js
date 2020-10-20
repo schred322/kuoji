@@ -20,16 +20,33 @@ var Kuoji = function () {
             .then(r => r.text())
             .then(d => {
 
+                /* html */
                 document.getElementById(target).innerHTML = '';
                 var parser = new DOMParser();
-                var doc = parser.parseFromString(d, 'text/html');
+                var doc = parser.parseFromString(d, 'text/html');  
                 document.getElementById(target).innerHTML = doc.body.innerHTML;
 
+                /* script */
                 var script = document.createElement('script');
                 script.type = 'text/javascript';
+                script.id = "kuoji_script"; 
                 script.text = (doc.head.getElementsByTagName('script')[0] !== undefined) ? doc.head.getElementsByTagName('script')[0].innerHTML : '';
-
+ 
+                if (document.getElementById("kuoji_script")) {
+                    document.getElementById("kuoji_script").remove();
+                }  
                 document.head.appendChild(script);
+
+                /* style */
+                var style = document.createElement('style'); 
+                style.id = "kuoji_style"; 
+                style.innerHTML = (doc.head.getElementsByTagName('style')[0] !== undefined) ? doc.head.getElementsByTagName('style')[0].innerHTML : '';
+ 
+                if (document.getElementById("kuoji_style")) {
+                    document.getElementById("kuoji_style").remove();
+                }   
+                document.head.appendChild(style);
+
             });
     };
 

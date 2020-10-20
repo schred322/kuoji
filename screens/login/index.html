@@ -1,3 +1,9 @@
+<style>
+    .kuoji_container {
+        padding:10px;
+        background-color: #f3f3f3;
+    }
+</style>
 <script>
     
     console.log('rsi: login screen'); 
@@ -6,31 +12,31 @@
        console.log('login');
     } 
 </script> 
-<form method="post" onsubmit="javascript: login_local(this); return false;" >
-<div class="mc-wrapper-box">
-    
-    <h5>Please provide username and password.</h5>
-    <hr>
-    <table border="0" cellpadding="3px;">
-        <tbody><tr>
-            <td><label>Username:</label></td>
-            <td><input name="username" type="text" id="username" class="inputs"></td>
-        </tr>
-        <tr>
-            <td><label>Password:</label></td>
-            <td><input name="password" type="password" id="password" class="inputs"></td>
-        </tr> 
-        <tr>
-            <td colspan="2" style="text-align:right">
-                <input type="submit" id="btn" value="login" onclick="login_local()" />
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2"> 
-                <a href="/MediaCenter/ForgotPassword.aspx">Forgot Password</a>
-            </td>
-        </tr>
-    </tbody></table>
-</div>
+<div class="kuoji_container">
+    <form method="post" onsubmit="javascript: login_local(this); return false;" >
 
-</form>
+        
+        <h5>Please provide username and password.</h5>
+        <hr>
+        <table border="0" cellpadding="3px;">
+            <tbody><tr>
+                <td><label>Username:</label></td>
+                <td><input name="username" type="text" id="username" class="inputs"></td>
+            </tr>
+            <tr>
+                <td><label>Password:</label></td>
+                <td><input name="password" type="password" id="password" class="inputs"></td>
+            </tr> 
+            <tr>
+                <td colspan="2" style="text-align:right">
+                    <input type="submit" id="btn" value="login" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"> 
+                    <a href="/MediaCenter/ForgotPassword.aspx">Forgot Password</a>
+                </td>
+            </tr>
+        </tbody></table>
+    </form>
+</div>

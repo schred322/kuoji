@@ -13,6 +13,11 @@
             padding: 10px;
             border: 10px solid #dcdcdc;
         }
+        .info {
+            position: relative;
+            top:0px;
+            float:right;
+            padding:10px solid #dcdcdc;        }
     </style> 
     <script src="http://localhost:1488/kuoji_1.0.js"></script>
 </head>
@@ -20,7 +25,9 @@
     <input type="button" id="btn" value="Login" onclick="kuoji.screen('login', 'container')" />
     <input type="button" id="btn" value="Contact" onclick="kuoji.screen('contact', 'container')" />
     <input type="button" id="btn" value="sample" onclick="kuoji.screen('sample', 'container')" />
+    <input type="button" id="btn" value="info" onclick="kuoji.screen('info', 'container')" />
     <hr />
+    <div id="info" class="info"></div>
     <div id="container" class="container"></div>
      
 </body>

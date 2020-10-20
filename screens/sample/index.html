@@ -1,8 +1,14 @@
+<style>
+    .kuoji_container {
+        padding:10px;
+        background-color: #f3f3f3;
+    }
+</style>
 <script type="module">
 
     console.log('rsi: sample form');
 
-    let mle = document.prototype = function(object){
+    var mle = document.prototype = function(object){
             
             var id = '#';
             var cls = '.';
@@ -16,7 +22,7 @@
             return null;
         }
  
-    const services = (function(service_url) {
+    var services = (function(service_url) {
 
         let base_api_url = (service_url === undefined) ? 'http://oojs/' : service_url; 
 
@@ -63,9 +69,9 @@
         return parseInt(x) - parseInt(y);
     }
 
-    let base = 'http://oojs/';  
-    let user = 'Donnie Drops';
-    let role = 'Manager';
+    var base = 'http://oojs/';  
+    var user = 'Donnie Drops';
+    var role = 'Manager';
 
     /* ui changes */
     mle('#user').innerHTML = user;
@@ -99,7 +105,7 @@
     });
     
 </script>
-<div>
+<div class="kuoji_container">
 <h2>Test center</h2>
 <hr/> 
 <h3>User: <span id="user"></span></h3>
