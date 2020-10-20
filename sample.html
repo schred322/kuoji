@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding:0px;
-            margin:0px;
+            padding: 0px;
+            margin: 0px;
         }
 
         input {
@@ -29,7 +30,10 @@
         .kuoji-link {
             cursor: pointer;
         }
-
+        .menu li a:hover {
+            color:#ffffff;
+            text-decoration: none;
+        }
         ul {
             list-style-type: none;
             margin: 0;
@@ -57,22 +61,23 @@
         .footer {
             background-color: #333333;
             color: white;
-            position: absolute;
-            bottom: 0;  
-            width:100%;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
-        .footer div {
-            padding:10px;
-        }
+
+            .footer div {
+                padding: 10px;
+            }
     </style>
     <script src="http://localhost:1488/kuoji_1.0.js"></script>
 </head>
 <body>
     <ul class="menu">
-        <li><a id="btn_login" class="kuoji-link" onclick="kuoji.screen('login', 'container')">Login</a></li>
+        <li><a id="btn_info" class="kuoji-link" onclick="kuoji.screen('info', 'container')">Info</a></li> 
         <li><a id="btn_contact" class="kuoji-link" onclick="kuoji.screen('contact', 'container')">Contact</a></li>
         <li><a id="btn_sample" class="kuoji-link" onclick="kuoji.screen('sample', 'container')">Sample</a></li>
-        <li><a id="btn_info" class="kuoji-link" onclick="kuoji.screen('info', 'container')">Info</a></li>
+        <li><a id="btn_login" class="kuoji-link" onclick="kuoji.screen('login', 'container')">Login</a></li>
     </ul>
     <hr />
     <div id="info" class="info"></div>
@@ -80,7 +85,7 @@
     <script>
         (function () {
             if (document.getElementById("container")) {
-                document.getElementById("container").innerHTML = kuoji.screen('login', 'container');
+                document.getElementById("container").innerHTML = kuoji.screen('info', 'container');
             }
         })(document);
     </script>

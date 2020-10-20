@@ -30,34 +30,28 @@
         <h1>Contact Screen</h1>
 
         <p>Please use either the form below to contact LiquidCreations.</p> 
-            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tbody><tr>
-                    <td class="clsFormLabel"><label>Contact Name:</label></td>
-                    <td><input type="text" name="txtContactName" class="required"></td>
-                </tr>
-                <tr>
-                    <td class="clsFormLabel"><label>Subject:</label></td>
-                    <td><input type="text" name="txtSubject"></td>
-                </tr>
-                <tr>
-                    <td class="clsFormLabel"><label>Email:</label></td>
-                    <td><input type="text" name="txtEmail" class="required email"></td>
-                </tr>
-                <tr>
-                    <td class="clsFormLabel"><label>Message:</label></td>
-                    <td> 
-                        <textarea name="txtBody" textmode="MultiLine" rows="10" class="required"></textarea>
-                    </td>
-                </tr>
-        </tbody>
-        </table>
-        <table border="0" cellpadding="0" cellspacing="0" width="75%">
-                <tbody><tr>
-                    <td align="right" colspan="2">
-                        <input type="submit" id="btn" value="send"  />
-                </tr>
-            </tbody>
-        </table>
+        
+        <div class="form-group">
+            <label>Contact Name:</label>
+            <input type="text" name="txtContactName"  class="form-control input-sm">
+        </div>
+
+        <div class="form-group"> 
+            <label>Subject:</label>
+            <input type="text" name="subject"  class="form-control input-sm">
+        </div>
+
+        <div class="form-group"> 
+            <label>Email:</label>
+            <input type="text" name="email"  class="form-control input-sm">
+        </div>
+
+        <div class="form-group"> 
+            <label>Message:</label>
+            <input type="text" name="message"  class="form-control input-sm">
+        </div>
+ 
+        <input type="submit" id="btn" class="btn btn-success" value="send"  />
         <p>You may also contact us at:  info@nuco.com </p> 
 
     </form>

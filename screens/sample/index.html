@@ -88,7 +88,7 @@
         mle('#result').value = '';
         mle('#result').value = subtract(value_1.value, value_2.value); 
     }); 
-    
+    /*
     mle('#btn_load').addEventListener('click', () => {
         services(base).get_clients('data.html')
             .then(function(result) {  
@@ -100,8 +100,9 @@
     btn_clear.addEventListener('click', () => {
         mle('#client_data').innerHTML = '';
     });
+    */
 
-    btn_clear_calc.addEventListener('click', () => {
+    btn_clear_calc.addEventListener('click', () => { 
         mle('#result').value = '';
     });
     
@@ -116,16 +117,20 @@
     <div>B: <span class="role"></span></div>
 </div>
 
-<hr/> 
-<input type="text" id="value_1" placeholder="value" size="10"/>
-<input type="text" id="value_2" placeholder="value"  size="10"/>
-<input type="text" id="result" placeholder="result"  size="10"/>
-<input type="button" id="btn_add" value="add"/>
-<input type="button" id="btn_subtract" value="subtract"/>
-<input type="button" id="btn_clear_calc" value="clear"/>
-
 <hr/>
-<input type="button" id="btn_load" value="load clients"/>
-<input type="button" id="btn_clear" value="clear"/>
-<div id="client_data"></div>
+<label>parameter 1:</label>
+<input type="text" id="value_1" placeholder="value" class="form-control input-sm"/>
+<label>parameter 2:</label>
+<input type="text" id="value_2" placeholder="value"  size="10" class="form-control input-sm"/>
+<label>result:</label>
+<input type="text" id="result" placeholder="result"  size="10" class="form-control input-sm"/>
+<br>
+<input type="button" id="btn_add" class="btn btn-success" value="add"/>
+<input type="button" id="btn_subtract" class="btn btn-success" value="subtract"/>
+<input type="button" id="btn_clear_calc" class="btn btn-success" value="clear"/>
+
+<!--hr/>
+<input type="button" id="btn_load" class="btn btn-success" value="load clients"/>
+<input type="button" id="btn_clear" class="btn btn-success" value="clear"/>
+<div id="client_data"></div-->
 </div>

@@ -18,25 +18,16 @@
         <h1>Login Screen</h1>
         <h5>Please provide username and password.</h5>
         <hr>
-        <table border="0" cellpadding="3px;">
-            <tbody><tr>
-                <td><label>Username:</label></td>
-                <td><input name="username" type="text" id="username" class="inputs"></td>
-            </tr>
-            <tr>
-                <td><label>Password:</label></td>
-                <td><input name="password" type="password" id="password" class="inputs"></td>
-            </tr> 
-            <tr>
-                <td colspan="2" style="text-align:right">
-                    <input type="submit" id="btn" value="login" />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2"> 
-                    <a href="/MediaCenter/ForgotPassword.aspx">Forgot Password</a>
-                </td>
-            </tr>
-        </tbody></table>
+        <div class="form-group"> 
+            <label>Username:</label>
+            <input type="text" name="username"  class="form-control input-sm">
+        </div>
+        <div class="form-group"> 
+            <label>Password:</label>
+            <input type="text" name="password"  class="form-control input-sm">
+        </div>
+        <div class="form-group"> 
+            <input type="submit" id="btn" value="login" class="btn btn-success"/>
+        </div> 
     </form>
 </div>
