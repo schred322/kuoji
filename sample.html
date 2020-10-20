@@ -2,29 +2,34 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title> 
+    <title></title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding:0px;
+            margin:0px;
         }
+
         input {
             cursor: pointer;
         }
+
         .container {
             width: 100%;
             height: 600px;
-            
         }
+
         .info {
             position: relative;
-            top:0px;
-            float:right;
-            padding:10px solid #dcdcdc;        
+            top: 0px;
+            float: right;
+            padding: 10px solid #dcdcdc;
         }
+
         .kuoji-link {
-            cursor:pointer;
+            cursor: pointer;
         }
-        
+
         ul {
             list-style-type: none;
             margin: 0;
@@ -32,38 +37,57 @@
             overflow: hidden;
             background-color: #333333;
         }
-        ul li {
-            float: left;
-        }
+
+            ul li {
+                float: left;
+            }
+
         li a {
             display: block;
             color: white;
             text-align: center;
             padding: 16px;
             text-decoration: none;
-        } 
-        li a:hover {
-            background-color: #555555;
         }
-    </style> 
-    <script src="http://localhost:1488/kuoji_1.0.js"></script>  
+
+            li a:hover {
+                background-color: #555555;
+            }
+
+        .footer {
+            background-color: #333333;
+            color: white;
+            position: absolute;
+            bottom: 0;  
+            width:100%;
+        }
+        .footer div {
+            padding:10px;
+        }
+    </style>
+    <script src="http://localhost:1488/kuoji_1.0.js"></script>
 </head>
-<body> 
+<body>
     <ul class="menu">
-        <li><a id="btn_login"     class="kuoji-link"  onclick="kuoji.screen('login', 'container')" >Login</a></li>
-        <li><a id="btn_contact"   class="kuoji-link"  onclick="kuoji.screen('contact', 'container')" >Contact</a></li>
-        <li><a id="btn_sample"    class="kuoji-link"  onclick="kuoji.screen('sample', 'container')" >Sample</a></li>
-        <li><a id="btn_info"      class="kuoji-link"  onclick="kuoji.screen('info', 'container')" >Info</a></li>
+        <li><a id="btn_login" class="kuoji-link" onclick="kuoji.screen('login', 'container')">Login</a></li>
+        <li><a id="btn_contact" class="kuoji-link" onclick="kuoji.screen('contact', 'container')">Contact</a></li>
+        <li><a id="btn_sample" class="kuoji-link" onclick="kuoji.screen('sample', 'container')">Sample</a></li>
+        <li><a id="btn_info" class="kuoji-link" onclick="kuoji.screen('info', 'container')">Info</a></li>
     </ul>
     <hr />
     <div id="info" class="info"></div>
-    <div id="container" class="container"></div> 
-    <script> 
-        (function() { 
+    <div id="container" class="container"></div>
+    <script>
+        (function () {
             if (document.getElementById("container")) {
                 document.getElementById("container").innerHTML = kuoji.screen('login', 'container');
             }
-        })(document);  
-    </script>  
+        })(document);
+    </script>
+    <div class="footer">
+        <div>
+            Kuogi with RSI Technology
+        </div>
+    </div>
 </body>
 </html>
