@@ -69,10 +69,21 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-        }
-
-            .footer div {
+        } 
+            .footer #logo {
                 padding: 10px;
+                float:left;
+            }
+            .footer #author, .footer #author a  {
+                float:right;  
+                color:whitesmoke;
+            }
+            .footer #author, .footer #author a:hover {
+                float:right;  
+                color:whitesmoke;
+            }
+            .footer #author { 
+                padding: 10px; 
             }
         #kuoji_header {
             font-size:33px;
@@ -80,14 +91,12 @@
             padding:10px;
         }
         #kuoji_settings {
+            font-weight: normal;
             font-size:12px;
             float:right;
             position:relative; 
         }
-        #author, #author a, #author a:hover{
-            float:right;
-            color:#ffffff;
-        }
+        
     </style>
     <script src="http://localhost:1488/kuoji_1.0.js"></script>
 </head>
@@ -113,10 +122,8 @@
         })(document);
     </script>
     <div class="footer">
-        <div>
-            Kuogi with RSI Technology
-            <div id="author" class="author"><a href="#" onclick="kuoji.screen('author','container');" >author</a></div>
-        </div>
+        <div id="logo">Kuogi with RSI Technology</div>
+        <div id="author"><a href="#" onclick="kuoji.screen('author','container');" >author</a></div> 
     </div>
 </body>
 </html>
