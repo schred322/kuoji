@@ -8,10 +8,9 @@
             cursor: pointer;
         }
         .container {
-            width: 600px;
+            width: 100%;
             height: 600px;
-            padding: 10px;
-            border: 10px solid #dcdcdc;
+            
         }
         .info {
             position: relative;
@@ -19,7 +18,7 @@
             float:right;
             padding:10px solid #dcdcdc;        }
     </style> 
-    <script src="http://localhost:1488/kuoji_1.0.js"></script>
+    <script src="http://localhost:1488/kuoji_1.0.js"></script>  
 </head>
 <body>
     <input type="button" id="btn" value="Login" onclick="kuoji.screen('login', 'container')" />
@@ -28,7 +27,13 @@
     <input type="button" id="btn" value="info" onclick="kuoji.screen('info', 'container')" />
     <hr />
     <div id="info" class="info"></div>
-    <div id="container" class="container"></div>
-     
+    <div id="container" class="container"></div> 
+    <script> 
+        (function() { 
+            if (document.getElementById("container")) {
+                document.getElementById("container").innerHTML = kuoji.screen('login', 'container');
+            }
+        })(document);  
+    </script>  
 </body>
 </html>
