@@ -1,8 +1,6 @@
 <style>
     .kuoji_container {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        padding:10px;
-        background-color: #f3f3f3;
+        /* override */
     }
 </style>
 <script type="module">
@@ -108,29 +106,34 @@
     
 </script>
 <div class="kuoji_container">
-<h1>Test Screen</h1>
-<hr/> 
-<h3>User: <span id="user"></span></h3>
-<div>
-    Role:  
-    <div>A: <span class="role"></span></div>
-    <div>B: <span class="role"></span></div>
-</div>
+    
+    <h3>Test Screen</h3>
+    <h5>User: <span id="user"></span></h5>
+    <div>
+        Role:  
+        <div>A: <span class="role"></span></div>
+        <div>B: <span class="role"></span></div>
+    </div>
 
-<hr/>
-<label>parameter 1:</label>
-<input type="text" id="value_1" placeholder="value" class="form-control input-sm"/>
-<label>parameter 2:</label>
-<input type="text" id="value_2" placeholder="value"  size="10" class="form-control input-sm"/>
-<label>result:</label>
-<input type="text" id="result" placeholder="result"  size="10" class="form-control input-sm"/>
-<br>
-<input type="button" id="btn_add" class="btn btn-success" value="add"/>
-<input type="button" id="btn_subtract" class="btn btn-success" value="subtract"/>
-<input type="button" id="btn_clear_calc" class="btn btn-success" value="clear"/>
+    <hr/>
 
-<!--hr/>
-<input type="button" id="btn_load" class="btn btn-success" value="load clients"/>
-<input type="button" id="btn_clear" class="btn btn-success" value="clear"/>
-<div id="client_data"></div-->
+    <label>parameter 1:</label>
+    <input type="text" id="value_1" placeholder="value" class="form-control input-sm"/>
+
+    <label>parameter 2:</label>
+    <input type="text" id="value_2" placeholder="value"  size="10" class="form-control input-sm"/>
+
+    <label>result:</label>
+    <input type="text" id="result" placeholder="result"  size="10" class="form-control input-sm"/>
+
+    <br>
+    <input type="button" id="btn_add" class="btn btn-success" value="add"/>
+    <input type="button" id="btn_subtract" class="btn btn-success" value="subtract"/>
+    <input type="button" id="btn_clear_calc" class="btn btn-success" value="clear"/>
+
+    <!--hr/>
+    <input type="button" id="btn_load" class="btn btn-success" value="load clients"/>
+    <input type="button" id="btn_clear" class="btn btn-success" value="clear"/>
+    <div id="client_data"></div-->
+
 </div>
