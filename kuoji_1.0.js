@@ -50,14 +50,14 @@ var Kuoji = function () {
             });
     };
 
-    function screen(name, target) {
+    function get_screen(name, target) {
         get(config.endpoint + '/screens/' + name, target);
     };
 
     /* public methods */
     return {
         screen: function (name, target) {
-            screen(name, target);
+            get_screen(name, target);
         }
     }
 };

@@ -5,7 +5,7 @@ const cors = require('cors');
 var app = connect();
 var config = { port: 1488 };
 var cors_options = {
-  origin: 'http://localhost:57467',
+  origin: ['http://localhost:57467', 'file://'],
   optionsSuccessStatus: 200 // For legacy browser support
 };
 app.use(cors(cors_options)); 
