@@ -10,7 +10,7 @@
 - stack: nodejs, javascript, html, css
 
 # Notes
-- invoke a collection of markup [css, html, json, etc... ] through a self contained object called a 'screen'.
+- invoke a collection of markup [css, html, json, etc... ] through a self contained "screen".
 
 # STEPS
 - clone, open terminal command in working directory: node kuoji.js
@@ -19,7 +19,7 @@
 - http://localhost:1488/samples/website_view.html
     * shows how to create onload kuogi screens with standard html link page routing.
 
-#A Kuoji Screen has 3 parts.
+# Kuoji Screens have three parts.
 - <style>
 - <script>
-- standard html markup
+- Standard HTML Markup
