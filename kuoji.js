@@ -3,8 +3,7 @@ const fs = require('fs').promises;
 const connect = require('connect');
 const cors = require('cors');
 const ss = require('./services/api');
-
-
+ 
 var app = connect();
 var config = { port: 1488 };
 var cors_options = {
@@ -14,8 +13,7 @@ var cors_options = {
  
 app.use(cors(cors_options)); 
 app.use(function(req, res) { 
-
-  
+ 
   var file = __dirname + req.url.replace(/\//g, '\\');
   var url = req.url;
 

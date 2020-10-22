@@ -7,9 +7,17 @@
 
 STEPS
 
-1.) open terminal command: node kuoji.js
-2.) http://localhost:1488/sample.html
-3.) click on buttons
+1.) clone, open terminal command in working directory: node kuoji.js
+2.) http://localhost:1488/samples/application_view.html
+    shows how to install kuoji screens on click events
+3.) http://localhost:1488/samples/website_view.html
+    shows how to create onload kuogi screens with standard html link page routing.
 
 
-... 
+//todo: show how to create "screens"
+
+A Kuoji Screen has 3 parts.
+
+1.) <style>
+2.) <script>
+3.) standard html markup
