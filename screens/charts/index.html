@@ -1,0 +1,20 @@
+
+<script id="kuoji_2">
+    console.log('kuoji screen: charts');
+    fetch('https://www.chartjs.org/samples/latest/charts/bar/stacked.html')
+    .then(result => console.log(result.text()))
+    .then(data => {
+        document.getElementById("kuoji_container_local").innerHTML = data;
+    });
+/*
+    fetch('https://www.chartjs.org/samples/latest/charts/bar/stacked.html')
+    .then(result => result.text())
+    .then(data => {
+        var doc = parser.parseFromString(data, 'text/html');  
+
+        document.getElementById("container").innerHTML = doc;
+    })
+    .catch(error => console.log(error));
+*/ 
+</script>
+<div id="kuoji_container_local"></div>

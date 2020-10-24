@@ -28,28 +28,50 @@ var Kuoji = function () {
                 var doc = parser.parseFromString(d, 'text/html');  
                 document.getElementById(target).innerHTML = doc.body.innerHTML; 
 
-                /* script */
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.id = "kuoji_script"; 
-                script.text = (doc.head.getElementsByTagName('script')[0] !== undefined)
-                                ? doc.head.getElementsByTagName('script')[0].innerHTML + '//# sourceURL=kuoji_script_debug.js'
-                                : ''; 
-                if (document.getElementById("kuoji_script")) {
-                    document.getElementById("kuoji_script").remove();
-                }  
-                document.head.appendChild(script); 
-                
-                /* style */
-                var style = document.createElement('style'); 
-                style.id = "kuoji_style"; 
-                style.innerHTML = (doc.head.getElementsByTagName('style')[0] !== undefined)
-                                    ? doc.head.getElementsByTagName('style')[0].innerHTML 
+                /* scripts */
+                var scripts = doc.head.getElementsByTagName('script');
+                var script;
+
+                for(var i = 0; i <= scripts.length; i++) {
+                    
+                    if (scripts[i] === undefined) { continue; }
+                     
+                    var debug_file = '//# sourceURL=kuoji_script_' + i + '_debug.js';
+
+                    script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.id = "kuoji_script_" + i; 
+                    if (doc.head.getElementsByTagName('script')[i].src !== ''){ 
+                        script.src = doc.head.getElementsByTagName('script')[i].src;
+                    } else {
+                        script.text = (doc.head.getElementsByTagName('script')[i] !== undefined)
+                                    ? doc.head.getElementsByTagName('script')[i].innerHTML + debug_file
                                     : ''; 
-                if (document.getElementById("kuoji_style")) {
-                    document.getElementById("kuoji_style").remove();
-                }   
-                document.head.appendChild(style);
+                    } 
+                    if (document.getElementById("kuoji_script_" + i)) {
+                        document.getElementById("kuoji_script_" + i).remove();
+                    } 
+                    document.head.appendChild(script); 
+                }; 
+ 
+                /* styles */
+                var styles = doc.head.getElementsByTagName('style');
+                var style;
+                
+                for(var i = 0; i <= styles.length; i++) {
+
+                    if (styles[i] === undefined) { continue; }
+ 
+                    style = document.createElement('style'); 
+                    style.id = "kuoji_style_" + i; 
+                    style.innerHTML = (doc.head.getElementsByTagName('style')[i] !== undefined)
+                                        ? doc.head.getElementsByTagName('style')[i].innerHTML 
+                                        : ''; 
+                    if (document.getElementById("kuoji_style_" + i)) {
+                        document.getElementById("kuoji_style_" + i).remove();
+                    }   
+                    document.head.appendChild(style);
+                } 
             });
     }; 
     function get_screen(name, target, callback) {
