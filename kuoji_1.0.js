@@ -22,12 +22,12 @@ var Kuoji = function () {
             .then(r => r.text())
             .then(d => { 
                 
-                /* cleanup */
-                var cleanup = document.querySelectorAll('[kuoji');
+                /* cleanup */ 
+                var cleanup = document.querySelectorAll('[kuoji'); 
                 Array.prototype.forEach.call( cleanup, function( node ) {
                     node.parentNode.removeChild( node );
                 });
-
+            
                 /* html */
                 document.getElementById(target).innerHTML = '';
                 var parser = new DOMParser();
