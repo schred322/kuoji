@@ -41,6 +41,9 @@ var Kuoji = function () {
                     script = document.createElement('script');
                     script.type = 'text/javascript';
                     script.id = "kuoji_script_" + i; 
+                    if (doc.head.getElementsByTagName('script')[i] !== '') {
+                        script.type = doc.head.getElementsByTagName('script')[i].type;
+                    }
                     if (doc.head.getElementsByTagName('script')[i].src !== ''){ 
                         script.src = doc.head.getElementsByTagName('script')[i].src;
                     } else {
@@ -54,6 +57,26 @@ var Kuoji = function () {
                     document.head.appendChild(script); 
                 }; 
  
+                /* links */
+                var links = doc.head.getElementsByTagName('link');
+                var link;
+
+                for(var i = 0; i <= links.length; i++) {
+                    
+                    if (links[i] === undefined) { continue; }
+                      
+                    link = document.createElement('link');
+                    link.type = 'text/javascript';
+                    link.id = "kuoji_link_" + i; 
+                    link.ref = doc.head.getElementsByTagName('link')[i].ref;
+                    link.type = doc.head.getElementsByTagName('link')[i].type;
+                    link.href = doc.head.getElementsByTagName('link')[i].href; 
+                    if (document.getElementById("kuoji_link_" + i)) {
+                        document.getElementById("kuoji_link_" + i).remove();
+                    } 
+                    document.head.appendChild(link); 
+                }; 
+
                 /* styles */
                 var styles = doc.head.getElementsByTagName('style');
                 var style;
