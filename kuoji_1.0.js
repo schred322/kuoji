@@ -21,6 +21,12 @@ var Kuoji = function () {
         fetch(screen)
             .then(r => r.text())
             .then(d => { 
+                
+                /* cleanup */
+                var cleanup = document.querySelectorAll('[kuoji');
+                Array.prototype.forEach.call( cleanup, function( node ) {
+                    node.parentNode.removeChild( node );
+                });
 
                 /* html */
                 document.getElementById(target).innerHTML = '';
@@ -37,23 +43,20 @@ var Kuoji = function () {
                     if (scripts[i] === undefined) { continue; }
                      
                     var debug_file = '//# sourceURL=kuoji_script_' + i + '_debug.js';
+                    var script_tag = doc.head.getElementsByTagName('script')[i];
 
                     script = document.createElement('script');
                     script.type = 'text/javascript';
-                    script.id = "kuoji_script_" + i; 
-                    if (doc.head.getElementsByTagName('script')[i] !== '') {
-                        script.type = doc.head.getElementsByTagName('script')[i].type;
+                    script.id = (script_tag.id === '') ? "kuoji_script_" + i : script_tag.id;
+                    script.setAttribute('kuoji','true');
+                    if (script_tag !== '') {
+                        script.type = script_tag.type;
                     }
-                    if (doc.head.getElementsByTagName('script')[i].src !== ''){ 
-                        script.src = doc.head.getElementsByTagName('script')[i].src;
+                    if (script_tag.src !== ''){ 
+                        script.src = script_tag.src;
                     } else {
-                        script.text = (doc.head.getElementsByTagName('script')[i] !== undefined)
-                                    ? doc.head.getElementsByTagName('script')[i].innerHTML + debug_file
-                                    : ''; 
-                    } 
-                    if (document.getElementById("kuoji_script_" + i)) {
-                        document.getElementById("kuoji_script_" + i).remove();
-                    } 
+                        script.text = (script_tag !== undefined) ? script_tag.innerHTML + debug_file : ''; 
+                    }  
                     document.head.appendChild(script); 
                 }; 
  
@@ -65,15 +68,15 @@ var Kuoji = function () {
                     
                     if (links[i] === undefined) { continue; }
                       
+                    var link_tag = doc.head.getElementsByTagName('link')[i];
+
                     link = document.createElement('link');
-                    link.type = 'text/javascript';
-                    link.id = "kuoji_link_" + i; 
-                    link.ref = doc.head.getElementsByTagName('link')[i].ref;
-                    link.type = doc.head.getElementsByTagName('link')[i].type;
-                    link.href = doc.head.getElementsByTagName('link')[i].href; 
-                    if (document.getElementById("kuoji_link_" + i)) {
-                        document.getElementById("kuoji_link_" + i).remove();
-                    } 
+                    link.type = 'text/javascript'; 
+                    link.id = (link_tag.id === '') ? "kuoji_link_" + i : link_tag.id;
+                    link.setAttribute('kuoji','true');
+                    link.ref = link_tag.ref;
+                    link.type = link_tag.type;
+                    link.href = link_tag.href;  
                     document.head.appendChild(link); 
                 }; 
 
@@ -85,14 +88,12 @@ var Kuoji = function () {
 
                     if (styles[i] === undefined) { continue; }
  
+                    var style_tag = doc.head.getElementsByTagName('style')[i];
+
                     style = document.createElement('style'); 
-                    style.id = "kuoji_style_" + i; 
-                    style.innerHTML = (doc.head.getElementsByTagName('style')[i] !== undefined)
-                                        ? doc.head.getElementsByTagName('style')[i].innerHTML 
-                                        : ''; 
-                    if (document.getElementById("kuoji_style_" + i)) {
-                        document.getElementById("kuoji_style_" + i).remove();
-                    }   
+                    style.id = (style_tag.id === '') ? "style_tag" + i : style_tag.id;
+                    style.setAttribute('kuoji','true');
+                    style.innerHTML = (style_tag !== undefined) ? style_tag.innerHTML : '';  
                     document.head.appendChild(style);
                 } 
             });
