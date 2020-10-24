@@ -1,4 +1,3 @@
-
 # Kuoji
 - Erf Date: 2020.10.18
 
@@ -20,6 +19,10 @@
 - WEBSITE SAMPLE: http://localhost:1488/samples/website_view.html
     * shows how to create onload kuogi screens with standard html link page routing.
 
+# Debug
+- Chrome Developer Tools 
+  * Tab > Sources > Page > (no domain) > kuoji_script_debug.js
+  
 # Kuoji Screens have three parts.
 - CSS
 - SCRIPT
