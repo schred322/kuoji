@@ -5,11 +5,14 @@
 </style>
 <script>
     
-    console.log('rsi: login screen'); 
+    console.log('kuoji screen: login'); 
     
-    function login_local() {
+    function login_local(form) {
        console.log('login');
+       alert('kuoji screen login: ' + form["username"].value);
+       // call api [javascript promise, jquery, angularjs ]
     } 
+
 </script> 
 <div class="kuoji_container">
     <h3>Login Screen</h3>
