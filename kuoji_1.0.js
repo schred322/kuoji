@@ -31,7 +31,7 @@ var Kuoji = function () {
                 /* html */
                 document.getElementById(target).innerHTML = '';
                 var parser = new DOMParser();
-                var doc = parser.parseFromString(d, 'text/html');  
+                var doc = parser.parseFromString(d, 'text/html');
                 document.getElementById(target).innerHTML = doc.body.innerHTML; 
 
                 /* scripts */

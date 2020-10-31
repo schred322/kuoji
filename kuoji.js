@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs').promises;  
 const connect = require('connect');
 const cors = require('cors');
-const ss = require('./services/api');
+const ss = require('./api/services/api.js');
  
 var app = connect();
 var config = { port: 1488 };
@@ -16,7 +16,7 @@ var mime = {
 
     var ext = file.split('.').pop();
 
-    console.log('mime: ' + ext);
+    //console.log('mime: ' + ss.test);
 
     switch(ext) {
       case 'css': return 'text/css';
@@ -41,7 +41,11 @@ app.use(function(req, res) {
   var url = req.url;
 
   if (url.includes('/screens/')) {
-    file = __dirname + req.url.replace(/\//g, '\\') + '\\index.html';
+    if (url.includes('.')) {
+      file = __dirname + req.url.replace(/\//g, '\\');
+    } else {
+      file = __dirname + req.url.replace(/\//g, '\\') + '\\index.html';
+    } 
   } else if (url.includes('/www/')) {
     file = __dirname + req.url;
   } else if (url.includes('/modules/')) {

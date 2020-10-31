@@ -1,12 +1,28 @@
+<base href="http://localhost:1488/screens/info/">
 <style>
     .kuoji_container {
         /* override */
     }
 </style>
 <script id="test_id">
-    console.log('kuoji screen: info...');
+
+
+    fetch('http://localhost:1488/screens/info/info.js') 
+        .then(function(response) {
+            if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' +
+                response.status);
+                return;
+            }
+            return response.text;
+        });
+ 
+    console.log('kuoji screen: Info');
     
-</script>
+</script> 
+
+<script type="module" src="info.js" ></script>
+
 <div class="kuoji_container">
     <h3>Build with RSI Technology</h3>
     <div>
@@ -14,6 +30,11 @@
         <p>
             <strong>RSI Technology (Remote Screen Invocation)</strong><br>
             Kuoji is a fully functional screen delivery service.
+        </p>
+        <p>
+            <input type="button" id="btn_1" class="btn btn-success" value="button 1" />
+            <input type="button" id="btn_2" class="btn btn-success" value="button 2" />
+            <input type="button" id="btn_3" class="btn btn-success" value="button 3" />
         </p>
         <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
