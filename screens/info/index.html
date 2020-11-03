@@ -4,24 +4,31 @@
         /* override */
     }
 </style>
-<script id="test_id">
-
-
-    fetch('http://localhost:1488/screens/info/info.js') 
-        .then(function(response) {
-            if (response.status !== 200) {
-                console.log('Looks like there was a problem. Status Code: ' +
-                response.status);
-                return;
-            }
-            return response.text;
-        });
  
-    console.log('kuoji screen: Info');
-    
-</script> 
+<!-- script type="module" src="http://localhost:1488/screens/info/info.js" /-->
+<script>
+    window.document.onload = function() {
+        console.log('here');
+    };
+ 
+        console.log('info.js initialized 2');
+        
+        btn_1.addEventListener('click', (event) => {  
+            console.log('local module button: ' + event);
+            alert('kuoji screen event: ' + event); 
+        }); 
+        
+        btn_2.addEventListener('click', (event) => {  
+            console.log('local module button: ' + event);
+            alert('kuoji screen event: ' + event); 
+        }); 
 
-<script type="module" src="info.js" ></script>
+        btn_3.addEventListener('click', (event) => {  
+            console.log('local module button: ' + event);
+            alert('kuoji screen event: ' + event); 
+        }); 
+ 
+</script>
 
 <div class="kuoji_container">
     <h3>Build with RSI Technology</h3>

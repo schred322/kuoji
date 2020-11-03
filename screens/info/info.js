@@ -14,7 +14,4 @@ btn_3.addEventListener('click', (event) => {
     console.log('local module button: ' + event);
     alert('kuoji screen event: ' + event); 
 }); 
-
-window.document.onclick = function() {
-    console.log('body click event');
-}
+ 

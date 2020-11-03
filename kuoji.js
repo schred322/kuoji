@@ -6,6 +6,7 @@ const ss = require('./api/services/api.js');
  
 var app = connect();
 var config = { port: 1488 };
+//var config = { port: 80 };
 var cors_options = {
   origin: ['http://localhost:57467', 'http://localhost:1499'],
   optionsSuccessStatus: 200 // For legacy browser support

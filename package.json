@@ -1,0 +1,13 @@
+{
+    "name": "kuoji_docker_web_app",
+    "version": "1.0.0",
+    "description": "Kuoji on Docker",
+    "author": "chewie",
+    "main": "kuoji.js",
+    "scripts": {
+      "start": "node kuoji.js"
+    },
+    "dependencies": {
+      "express": "^1.0.0"
+    }
+  }
